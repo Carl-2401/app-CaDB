@@ -8,30 +8,29 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#0f0f1a;--bg2:#16162a;--bg3:#1e1e35;--panel:#13131f;
-  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.14);
+  --border:rgba(255,255,255,0.08);--border2:rgba(255,255,255,0.16);
   --text:#e8e8f0;--text2:#9090b0;--text3:#555575;
   --accent:#4a7cdc;--accent2:#6b5be6;
   --success:#2ecc71;--danger:#e74c3c;
-  --radius:8px;
+  --r:8px;
 }
 html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text)}
 #app{display:flex;height:100vh}
-#panel{width:240px;min-width:240px;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
-#ph{padding:14px 14px 10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+#panel{width:248px;min-width:248px;background:var(--panel);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+#ph{padding:14px 13px 10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
 #ph .logo{width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-size:13px;flex-shrink:0}
-#ph h1{font-size:13px;font-weight:600}
-#ph p{font-size:10px;color:var(--text3);margin-top:1px}
+#ph h1{font-size:13px;font-weight:600}#ph p{font-size:10px;color:var(--text3);margin-top:1px}
 #ps{flex:1;overflow-y:auto}
 #ps::-webkit-scrollbar{width:3px}
 #ps::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
-.sec{padding:10px 12px;border-bottom:1px solid var(--border)}
+.sec{padding:10px 13px;border-bottom:1px solid var(--border)}
 .lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text3);margin-bottom:7px}
-#dz{border:1.5px dashed var(--border2);border-radius:var(--radius);padding:12px 8px;text-align:center;cursor:pointer;color:var(--text2);font-size:11px;line-height:1.7;transition:border-color .2s,background .2s}
+#dz{border:1.5px dashed var(--border2);border-radius:var(--r);padding:12px 8px;text-align:center;cursor:pointer;color:var(--text2);font-size:11px;line-height:1.7;transition:border-color .2s,background .2s}
 #dz:hover,#dz.over{border-color:var(--accent);background:rgba(74,124,220,.07)}
 #dz .sub{font-size:10px;color:var(--text3);margin-top:2px}
 #fi{display:none}
 #queue{display:flex;flex-direction:column;gap:3px;margin-top:6px}
-.qi{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:var(--radius);background:var(--bg3);font-size:11px;border:1px solid var(--border)}
+.qi{display:flex;align-items:center;gap:6px;padding:5px 8px;border-radius:var(--r);background:var(--bg3);font-size:11px;border:1px solid var(--border)}
 .qi .qn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text2)}
 .qi.loading .qn{color:#60a0ff}.qi.done .qn{color:var(--success)}.qi.error .qn{color:var(--danger)}
 .qb{font-size:9px;padding:2px 6px;border-radius:10px;white-space:nowrap;font-weight:600}
@@ -42,14 +41,13 @@ html,body{height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFo
 #pw{height:2px;background:var(--border);border-radius:2px;margin-top:6px;overflow:hidden;display:none}
 #pb{height:100%;background:var(--accent);width:0;transition:width .3s}
 #sl{display:flex;flex-direction:column;gap:3px}
-.shr{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:var(--radius);cursor:pointer;font-size:11px;border:1px solid transparent;transition:background .15s,border-color .15s}
+.shr{display:flex;align-items:center;gap:6px;padding:6px 8px;border-radius:var(--r);cursor:pointer;font-size:11px;border:1px solid transparent;transition:background .15s,border-color .15s}
 .shr:hover{background:var(--bg3)}.shr.sel{background:var(--bg3);border-color:var(--accent)}
 .shr .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .shr .shn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text2)}
 .shr.sel .shn{color:var(--text);font-weight:500}
 .sdel{color:var(--text3);cursor:pointer;font-size:13px;padding:0 2px}.sdel:hover{color:var(--danger)}
-#nso{font-size:11px;color:var(--text3)}
-#nsc{font-size:11px;color:var(--text3)}
+#nso{font-size:11px;color:var(--text3)}#nsc{font-size:11px;color:var(--text3)}
 .cg{margin-bottom:9px}.cg:last-child{margin-bottom:0}
 .cl{font-size:10px;color:var(--text2);margin-bottom:4px}
 .mmc{display:flex;align-items:center;gap:4px}
@@ -65,26 +63,34 @@ input[type=number]::-webkit-inner-spin-button{opacity:0}
 .crow{display:flex;gap:5px;flex-wrap:wrap}
 .csw{width:21px;height:21px;border-radius:5px;cursor:pointer;border:2px solid transparent;transition:border-color .15s,transform .1s}
 .csw:hover{transform:scale(1.1)}.csw.active{border-color:#fff}
+/* MODE TOGGLE */
+.mode-row{display:flex;gap:0;border:1px solid var(--border2);border-radius:var(--r);overflow:hidden;margin-bottom:9px}
+.mode-btn{flex:1;padding:6px 4px;font-size:11px;background:transparent;color:var(--text2);border:none;cursor:pointer;transition:background .15s,color .15s;text-align:center}
+.mode-btn:hover{background:var(--bg3);color:var(--text)}
+.mode-btn.active{background:var(--accent);color:#fff}
 #vw{display:flex;gap:4px;flex-wrap:wrap}
-.vb{flex:1;min-width:38px;padding:5px 2px;font-size:11px;border:1px solid var(--border2);border-radius:var(--radius);background:var(--bg3);color:var(--text2);cursor:pointer;text-align:center;transition:background .15s,color .15s}
+.vb{flex:1;min-width:36px;padding:5px 2px;font-size:11px;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg3);color:var(--text2);cursor:pointer;text-align:center;transition:background .15s,color .15s}
 .vb:hover{background:var(--bg2);color:var(--text)}.vb.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.btn{padding:7px 8px;font-size:12px;font-weight:500;border:1px solid var(--border2);border-radius:var(--radius);background:var(--bg3);color:var(--text2);cursor:pointer;transition:background .15s,color .15s}
+.btn{padding:7px 8px;font-size:12px;font-weight:500;border:1px solid var(--border2);border-radius:var(--r);background:var(--bg3);color:var(--text2);cursor:pointer;transition:background .15s,color .15s}
 .btn:hover{background:var(--bg2);color:var(--text)}
 .btn.pri{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.pri:hover{background:#3a6ccc}
 .btn.red{background:rgba(231,76,60,.15);color:var(--danger);border-color:rgba(231,76,60,.3)}.btn.red:hover{background:rgba(231,76,60,.25)}
 .br{display:flex;gap:5px}.br .btn{flex:1}
-.qb2{display:flex;gap:4px;margin-top:5px;flex-wrap:wrap}
-.qb2 .btn{flex:1;min-width:42px;font-size:10px;padding:4px 2px;text-align:center}
+.qb2{display:flex;gap:4px;margin-top:5px}
+.qb2 .btn{flex:1;font-size:10px;padding:4px 2px;text-align:center}
+/* WALL THICKNESS */
+.row2{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.row2 label{font-size:11px;color:var(--text2);min-width:60px}
+.row2 input[type=number]{width:52px;font-size:12px;padding:3px 5px;border:1px solid var(--border2);border-radius:5px;background:var(--bg);color:var(--text);text-align:center}
+.row2 .u{font-size:10px;color:var(--text3)}
 #vp{flex:1;position:relative;overflow:hidden;background:#0d0d1e}
 #c3d{display:block;width:100%;height:100%}
 #hud{position:absolute;top:10px;left:10px;display:flex;gap:6px;pointer-events:none;flex-wrap:wrap}
 .ht{font-size:10px;font-weight:600;letter-spacing:.04em;color:rgba(255,255,255,.45);background:rgba(0,0,0,.4);padding:3px 8px;border-radius:20px;border:1px solid rgba(255,255,255,.1)}
-#hs{display:none}
-#hs.show{display:block;color:#60a0ff;border-color:rgba(74,124,220,.4);background:rgba(74,124,220,.15)}
+#hsel{display:none}#hsel.show{display:block;color:#60a0ff;border-color:rgba(74,124,220,.4);background:rgba(74,124,220,.15)}
 #hint{position:absolute;bottom:10px;right:10px;font-size:10px;color:rgba(255,255,255,.28);text-align:right;line-height:1.7;pointer-events:none}
-#si{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:7px 11px;font-size:11px;color:rgba(255,255,255,.55);display:none;pointer-events:none;line-height:1.8}
-#si.show{display:block}
-#si strong{color:#fff;font-weight:600}
+#si{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);padding:7px 11px;font-size:11px;color:rgba(255,255,255,.55);display:none;pointer-events:none;line-height:1.8}
+#si.show{display:block}#si strong{color:#fff;font-weight:600}
 #es{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none;gap:8px}
 #es .ic{font-size:44px;opacity:.13}
 #es p{font-size:13px;color:rgba(255,255,255,.18)}
@@ -101,7 +107,7 @@ input[type=number]::-webkit-inner-spin-button{opacity:0}
   <div id="panel">
     <div id="ph">
       <div class="logo">◈</div>
-      <div><h1>SVG → 3D</h1><p>Extrusión real con huecos</p></div>
+      <div><h1>SVG → 3D</h1><p>Cortadora / sólido / paredes</p></div>
     </div>
     <div id="ps">
       <div class="sec">
@@ -109,20 +115,43 @@ input[type=number]::-webkit-inner-spin-button{opacity:0}
         <div id="dz" onclick="document.getElementById('fi').click()">
           <div>Arrastrá SVGs aquí</div>
           <div>o hacé click para seleccionar</div>
-          <div class="sub">Hasta 5 · huecos y detalles incluidos</div>
+          <div class="sub">Hasta 5 archivos</div>
         </div>
         <input type="file" id="fi" accept=".svg,image/svg+xml" multiple>
         <div id="queue"></div>
         <div id="pw"><div id="pb"></div></div>
       </div>
+
       <div class="sec">
         <div class="lbl">Objetos</div>
         <div id="sl"><div id="nso">Sin objetos aún</div></div>
       </div>
+
       <div class="sec">
         <div class="lbl">Seleccionado</div>
         <div id="nsc">Seleccioná un objeto</div>
         <div id="cb" style="display:none">
+
+          <!-- MODE -->
+          <div class="cg">
+            <div class="cl">Modo de extrusión</div>
+            <div class="mode-row">
+              <button class="mode-btn active" id="m-wall" onclick="setMode('wall')">Paredes</button>
+              <button class="mode-btn" id="m-solid" onclick="setMode('solid')">Sólido</button>
+            </div>
+          </div>
+
+          <!-- WALL THICKNESS (only in wall mode) -->
+          <div class="cg" id="wall-ctrl">
+            <div class="cl">Grosor de pared</div>
+            <div class="row2">
+              <label>Grosor</label>
+              <input type="number" id="wt" value="1.2" min="0.2" max="20" step="0.1" oninput="setWall(+this.value)">
+              <span class="u">mm</span>
+            </div>
+          </div>
+
+          <!-- HEIGHT -->
           <div class="cg">
             <div class="cl">Altura de extrusión</div>
             <div class="mmc">
@@ -132,7 +161,7 @@ input[type=number]::-webkit-inner-spin-button{opacity:0}
               <span class="u">mm</span>
             </div>
             <div class="rsl">
-              <input type="range" id="hs2" min="1" max="200" value="10" step="1" oninput="setH(+this.value)">
+              <input type="range" id="hsl" min="1" max="200" value="10" step="1" oninput="setH(+this.value)">
               <span class="v" id="hv">10 mm</span>
             </div>
             <div class="qb2">
@@ -142,23 +171,29 @@ input[type=number]::-webkit-inner-spin-button{opacity:0}
               <button class="btn" onclick="adjH(+10)">+10</button>
             </div>
           </div>
+
+          <!-- SCALE -->
           <div class="cg">
             <div class="cl">Escala XY</div>
             <div class="rsl">
-              <input type="range" id="ss" min="5" max="300" value="100" step="1" oninput="setSc(+this.value)">
+              <input type="range" id="ssl" min="5" max="300" value="100" step="1" oninput="setSc(+this.value)">
               <span class="v" id="sv">100%</span>
             </div>
           </div>
+
+          <!-- COLOR -->
           <div class="cg">
             <div class="cl">Color</div>
             <div class="crow" id="crow"></div>
           </div>
+
           <div class="br">
             <button class="btn" onclick="centerSel()">Centrar</button>
             <button class="btn red" onclick="delSel()">Eliminar</button>
           </div>
         </div>
       </div>
+
       <div class="sec">
         <div class="lbl">Vista rápida</div>
         <div id="vw">
@@ -169,6 +204,7 @@ input[type=number]::-webkit-inner-spin-button{opacity:0}
           <button class="vb" onclick="setView('iso',this)">Iso</button>
         </div>
       </div>
+
       <div class="sec">
         <div class="lbl">Exportar</div>
         <div class="br">
@@ -179,32 +215,32 @@ input[type=number]::-webkit-inner-spin-button{opacity:0}
       </div>
     </div>
   </div>
+
   <div id="vp">
     <canvas id="c3d"></canvas>
     <div id="hud">
-      <div class="ht" id="hv2">3D libre</div>
-      <div class="ht" id="hs">—</div>
+      <div class="ht" id="hview">3D libre</div>
+      <div class="ht" id="hsel">—</div>
     </div>
     <div id="es">
       <div class="ic">◈</div>
       <p>Importá un SVG para comenzar</p>
-      <small>Huecos y detalles internos incluidos</small>
+      <small>Modo paredes = cortadora de galletas</small>
     </div>
     <div id="si"><strong id="sin">—</strong><br><span id="sid">—</span></div>
     <div id="hint">Click izq → rotar · Click der → mover · Rueda → zoom</div>
     <div id="lo"><div class="sp"></div><p id="lm">Procesando...</p></div>
   </div>
 </div>
- 
-<!-- earcut for proper hole support -->
+
 <script src="https://cdn.jsdelivr.net/npm/earcut@2.2.4/src/earcut.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 // ── PALETTE ──────────────────────────────────────────────────
 const COLS=[
-  {n:'azul',h:'#3a7bd5'},{n:'verde',h:'#1a9e6e'},
-  {n:'coral',h:'#e05a35'},{n:'violeta',h:'#7055e0'},
-  {n:'ámbar',h:'#d4890a'},{n:'gris',h:'#6e6e8a'},
+  {n:'verde oliva',h:'#7a9e5a'},{n:'azul',h:'#3a7bd5'},
+  {n:'coral',h:'#e05a35'},{n:'gris',h:'#7a7a8a'},
+  {n:'ámbar',h:'#c08020'},{n:'violeta',h:'#7055e0'},
   {n:'cian',h:'#1a9ec0'},{n:'rosa',h:'#cc3d78'},
 ];
 const crowEl=document.getElementById('crow');
@@ -220,10 +256,10 @@ COLS.forEach((c,i)=>{
   });
   crowEl.appendChild(sw);
 });
- 
+
 // ── STATE ────────────────────────────────────────────────────
 let shapes=[],sel=null,queue=[],importing=false;
- 
+
 // ── THREE ────────────────────────────────────────────────────
 const canvas=document.getElementById('c3d');
 const vpEl=document.getElementById('vp');
@@ -237,7 +273,7 @@ renderer.toneMappingExposure=1.1;
 const scene=new THREE.Scene();
 scene.fog=new THREE.FogExp2(0x0d0d1e,0.005);
 const camera=new THREE.PerspectiveCamera(45,1,0.01,2000);
-scene.add(new THREE.AmbientLight(0xffffff,0.6));
+scene.add(new THREE.AmbientLight(0xffffff,0.55));
 const sun=new THREE.DirectionalLight(0xffffff,1.0);
 sun.position.set(30,60,40);sun.castShadow=true;
 sun.shadow.mapSize.width=2048;sun.shadow.mapSize.height=2048;
@@ -245,7 +281,8 @@ sun.shadow.camera.near=1;sun.shadow.camera.far=400;
 sun.shadow.camera.left=-120;sun.shadow.camera.right=120;
 sun.shadow.camera.top=120;sun.shadow.camera.bottom=-120;
 sun.shadow.bias=-0.001;scene.add(sun);
-scene.add(Object.assign(new THREE.DirectionalLight(0x8899ff,0.3),{position:{x:-30,y:20,z:-20}}));
+scene.add(Object.assign(new THREE.DirectionalLight(0x8899ff,0.3),{position:new THREE.Vector3(-30,20,-20)}));
+// Bed
 const BED=200;
 for(let i=-BED/2;i<=BED/2;i+=10){
   const maj=i%50===0;
@@ -256,7 +293,7 @@ for(let i=-BED/2;i<=BED/2;i+=10){
 const bedMesh=new THREE.Mesh(new THREE.BoxGeometry(BED,0.8,BED),new THREE.MeshLambertMaterial({color:0x0b1020}));
 bedMesh.position.y=-0.4;bedMesh.receiveShadow=true;scene.add(bedMesh);
 const axH=new THREE.AxesHelper(12);axH.position.set(-BED/2+4,0.1,-BED/2+4);scene.add(axH);
- 
+
 // ── CAMERA ───────────────────────────────────────────────────
 let theta=-45,phi=55,radius=120,target=new THREE.Vector3(0,8,0);
 let isDrag=false,isPan=false,lastX=0,lastY=0;
@@ -286,20 +323,19 @@ canvas.addEventListener('touchend',()=>{isDrag=false;});
 function onResize(){const w=vpEl.clientWidth,h=vpEl.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();render();}
 window.addEventListener('resize',onResize);setTimeout(onResize,60);
 function render(){renderer.render(scene,camera);}
- 
-// ── FILE HANDLING ────────────────────────────────────────────
+
+// ── FILE HANDLING ─────────────────────────────────────────────
 const dz=document.getElementById('dz');
 dz.addEventListener('dragover',e=>{e.preventDefault();dz.classList.add('over');});
 dz.addEventListener('dragleave',()=>dz.classList.remove('over'));
 dz.addEventListener('drop',e=>{e.preventDefault();dz.classList.remove('over');enqueueFiles([...e.dataTransfer.files]);});
 document.getElementById('fi').addEventListener('change',e=>{enqueueFiles([...e.target.files]);e.target.value='';});
- 
 function enqueueFiles(files){
   const svgs=files.filter(f=>f.name.toLowerCase().endsWith('.svg')||f.type==='image/svg+xml');
   const inF=queue.filter(q=>q.status==='pending'||q.status==='loading').length;
   const total=shapes.length+inF;
   const allowed=Math.min(svgs.length,5-total);
-  if(allowed<=0){alert('Máximo 5 objetos. Eliminá alguno primero.');return;}
+  if(allowed<=0){alert('Máximo 5 objetos.');return;}
   if(svgs.length>allowed)alert(`Solo se pueden agregar ${allowed} archivo(s) más.`);
   svgs.slice(0,allowed).forEach(f=>queue.push({file:f,status:'pending'}));
   renderQueue();document.getElementById('pw').style.display='';
@@ -337,11 +373,18 @@ function loadSVG(file){
         const vb=svgEl.getAttribute('viewBox');
         if(vb){const p=vb.trim().split(/[\s,]+/).map(Number);vx=p[0];vy=p[1];w=p[2];h=p[3];}
         else{w=parseFloat(svgEl.getAttribute('width'))||100;h=parseFloat(svgEl.getAttribute('height'))||100;}
-        showL('Extrusionando con huecos...');
+        showL('Construyendo geometría 3D...');
         await new Promise(r=>setTimeout(r,20));
-        await addShape({name:file.name.replace(/\.svg$/i,''),svgText:txt,inner:svgEl.innerHTML,vx,vy,origW:w,origH:h,heightMM:10,scale:100,col:COLS[shapes.length%COLS.length].h});
+        await addShape({
+          name:file.name.replace(/\.svg$/i,''),
+          svgText:txt,inner:svgEl.innerHTML,
+          vx,vy,origW:w,origH:h,
+          heightMM:10,scale:100,wallMM:1.2,
+          mode:'wall', // 'wall' | 'solid'
+          col:COLS[shapes.length%COLS.length].h
+        });
         hideL();resolve();
-      }catch(err){hideL();reject(err);}
+      }catch(err){hideL();console.error(err);reject(err);}
     };
     reader.onerror=()=>{hideL();reject('read error');};
     reader.readAsText(file);
@@ -349,51 +392,36 @@ function loadSVG(file){
 }
 function showL(m){document.getElementById('lm').textContent=m||'...';document.getElementById('lo').classList.add('show');}
 function hideL(){document.getElementById('lo').classList.remove('show');}
- 
+
 // ── SVG PATH PARSER ──────────────────────────────────────────
-function parsePath(d, flatness=0.5){
-  // returns array of sub-paths, each is flat [x,y,x,y,...] (closed implied)
+function parsePath(d,flatness){
+  flatness=flatness||0.5;
   const subpaths=[];
-  let cur=[];
-  let x=0,y=0,sx=0,sy=0,ppx=0,ppy=0; // ppx/ppy = prev control point
- 
+  let cur=[],x=0,y=0,sx=0,sy=0,ppx=0,ppy=0;
   const re=/([MmZzLlHhVvCcSsQqTtAa])|([+-]?(?:\d+\.?\d*|\.\d+)(?:[eE][+-]?\d+)?)/g;
-  let m,curCmd=null,args=[];
-  const cmds=[];
-  while((m=re.exec(d))!==null){
-    if(m[1]){if(curCmd!==null)cmds.push({cmd:curCmd,args});curCmd=m[1];args=[];}
-    else args.push(parseFloat(m[2]));
-  }
+  let m,curCmd=null,args=[];const cmds=[];
+  while((m=re.exec(d))!==null){if(m[1]){if(curCmd!==null)cmds.push({cmd:curCmd,args});curCmd=m[1];args=[];}else args.push(parseFloat(m[2]));}
   if(curCmd!==null)cmds.push({cmd:curCmd,args});
- 
-  function push(ax,ay){
-    if(cur.length>=2){const dx=ax-cur[cur.length-2],dy=ay-cur[cur.length-1];if(dx*dx+dy*dy<0.0001)return;}
-    cur.push(ax,ay);
-  }
-  function flushSub(){if(cur.length>=6)subpaths.push(cur);cur=[];}
- 
-  function cubicBez(x0,y0,x1,y1,x2,y2,x3,y3,depth){
-    if(depth>10)return;
-    const ux=3*x1-2*x0-x3,uy=3*y1-2*y0-y3;
-    const vx=3*x2-2*x3-x0,vy=3*y2-2*y3-y0;
+  function push(ax,ay){if(cur.length>=2){const dx=ax-cur[cur.length-2],dy=ay-cur[cur.length-1];if(dx*dx+dy*dy<0.0001)return;}cur.push(ax,ay);}
+  function flush(){if(cur.length>=6)subpaths.push([...cur]);cur=[];}
+  function cubic(x0,y0,x1,y1,x2,y2,x3,y3,d){
+    if(d>10)return;
+    const ux=3*x1-2*x0-x3,uy=3*y1-2*y0-y3,vx=3*x2-2*x3-x0,vy=3*y2-2*y3-y0;
     if(Math.max(ux*ux,vx*vx)+Math.max(uy*uy,vy*vy)<=flatness*flatness*16){push(x3,y3);return;}
     const x01=(x0+x1)/2,y01=(y0+y1)/2,x12=(x1+x2)/2,y12=(y1+y2)/2,x23=(x2+x3)/2,y23=(y2+y3)/2;
     const x012=(x01+x12)/2,y012=(y01+y12)/2,x123=(x12+x23)/2,y123=(y12+y23)/2;
     const xm=(x012+x123)/2,ym=(y012+y123)/2;
-    cubicBez(x0,y0,x01,y01,x012,y012,xm,ym,depth+1);
-    cubicBez(xm,ym,x123,y123,x23,y23,x3,y3,depth+1);
+    cubic(x0,y0,x01,y01,x012,y012,xm,ym,d+1);cubic(xm,ym,x123,y123,x23,y23,x3,y3,d+1);
   }
-  function quadBez(x0,y0,x1,y1,x2,y2,depth){
-    if(depth>10)return;
+  function quad(x0,y0,x1,y1,x2,y2,d){
+    if(d>10)return;
     const ux=x0-2*x1+x2,uy=y0-2*y1+y2;
     if(ux*ux+uy*uy<=flatness*flatness*4){push(x2,y2);return;}
     const x01=(x0+x1)/2,y01=(y0+y1)/2,x12=(x1+x2)/2,y12=(y1+y2)/2;
-    const xm=(x01+x12)/2,ym=(y01+y12)/2;
-    quadBez(x0,y0,x01,y01,xm,ym,depth+1);
-    quadBez(xm,ym,x12,y12,x2,y2,depth+1);
+    quad(x0,y0,x01,y01,(x01+x12)/2,(y01+y12)/2,d+1);quad((x01+x12)/2,(y01+y12)/2,x12,y12,x2,y2,d+1);
   }
-  function arcSeg(x1,y1,rx0,ry0,xRot,la,sw,x2,y2){
-    if(rx0===0&&ry0===0){push(x2,y2);return;}
+  function arc(x1,y1,rx0,ry0,xRot,la,sw,x2,y2){
+    if(!rx0||!ry0){push(x2,y2);return;}
     let rx=Math.abs(rx0),ry=Math.abs(ry0);
     const phi=xRot*Math.PI/180,cosP=Math.cos(phi),sinP=Math.sin(phi);
     const dx=(x1-x2)/2,dy=(y1-y2)/2;
@@ -405,413 +433,371 @@ function parsePath(d, flatness=0.5){
     let sq=(den===0?0:Math.sqrt(num/den))*(la===sw?-1:1);
     const cxp=sq*rx*y1p/ry,cyp=-sq*ry*x1p/rx;
     const cx=cosP*cxp-sinP*cyp+(x1+x2)/2,cy=sinP*cxp+cosP*cyp+(y1+y2)/2;
-    const ang1=Math.atan2((y1p-cyp)/ry,(x1p-cxp)/rx);
-    let dang=Math.atan2((-y1p-cyp)/ry,(-x1p-cxp)/rx)-ang1;
-    if(sw===0&&dang>0)dang-=2*Math.PI;
-    if(sw===1&&dang<0)dang+=2*Math.PI;
-    const steps=Math.max(4,Math.ceil(Math.abs(dang)/(Math.PI/16)));
-    for(let i=1;i<=steps;i++){const a=ang1+dang*i/steps;push(cx+rx*Math.cos(a)*cosP-ry*Math.sin(a)*sinP,cy+rx*Math.cos(a)*sinP+ry*Math.sin(a)*cosP);}
+    const a0=Math.atan2((y1p-cyp)/ry,(x1p-cxp)/rx);
+    let da=Math.atan2((-y1p-cyp)/ry,(-x1p-cxp)/rx)-a0;
+    if(sw===0&&da>0)da-=2*Math.PI;if(sw===1&&da<0)da+=2*Math.PI;
+    const steps=Math.max(4,Math.ceil(Math.abs(da)/(Math.PI/16)));
+    for(let i=1;i<=steps;i++){const a=a0+da*i/steps;push(cx+rx*Math.cos(a)*cosP-ry*Math.sin(a)*sinP,cy+rx*Math.cos(a)*sinP+ry*Math.sin(a)*cosP);}
   }
- 
   for(const {cmd,args:a} of cmds){
-    const rel=cmd===cmd.toLowerCase()&&cmd!=='z'&&cmd!=='Z';
-    let i=0;
+    const rel=cmd===cmd.toLowerCase()&&cmd!=='z'&&cmd!=='Z';let i=0;
     switch(cmd.toUpperCase()){
-      case 'M':
-        flushSub();
-        x=(rel?x:0)+a[i++];y=(rel?y:0)+a[i++];sx=x;sy=y;cur=[];push(x,y);
-        while(i<a.length){x=(rel?x:0)+a[i++];y=(rel?y:0)+a[i++];push(x,y);}
-        ppx=x;ppy=y;break;
-      case 'Z':
-        push(sx,sy);flushSub();x=sx;y=sy;ppx=x;ppy=y;break;
-      case 'L':
-        while(i<a.length){x=(rel?x:0)+a[i++];y=(rel?y:0)+a[i++];push(x,y);}ppx=x;ppy=y;break;
-      case 'H':
-        while(i<a.length){x=(rel?x:0)+a[i++];push(x,y);}ppx=x;ppy=y;break;
-      case 'V':
-        while(i<a.length){y=(rel?y:0)+a[i++];push(x,y);}ppx=x;ppy=y;break;
-      case 'C':
-        while(i+5<a.length+1){
-          const x1=(rel?x:0)+a[i++],y1=(rel?y:0)+a[i++];
-          const x2=(rel?x:0)+a[i++],y2=(rel?y:0)+a[i++];
-          const ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];
-          cubicBez(x,y,x1,y1,x2,y2,ex,ey,0);ppx=x2;ppy=y2;x=ex;y=ey;
-        }break;
-      case 'S':
-        while(i+3<a.length+1){
-          const x1=2*x-ppx,y1=2*y-ppy;
-          const x2=(rel?x:0)+a[i++],y2=(rel?y:0)+a[i++];
-          const ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];
-          cubicBez(x,y,x1,y1,x2,y2,ex,ey,0);ppx=x2;ppy=y2;x=ex;y=ey;
-        }break;
-      case 'Q':
-        while(i+3<a.length+1){
-          const x1=(rel?x:0)+a[i++],y1=(rel?y:0)+a[i++];
-          const ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];
-          quadBez(x,y,x1,y1,ex,ey,0);ppx=x1;ppy=y1;x=ex;y=ey;
-        }break;
-      case 'T':
-        while(i+1<a.length+1){
-          const x1=2*x-ppx,y1=2*y-ppy;
-          const ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];
-          quadBez(x,y,x1,y1,ex,ey,0);ppx=x1;ppy=y1;x=ex;y=ey;
-        }break;
-      case 'A':
-        while(i+6<a.length+1){
-          const rx=a[i++],ry=a[i++],xR=a[i++],la=a[i++],sw=a[i++];
-          const ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];
-          arcSeg(x,y,rx,ry,xR,la,sw,ex,ey);ppx=x;ppy=y;x=ex;y=ey;
-        }break;
+      case 'M':flush();x=(rel?x:0)+a[i++];y=(rel?y:0)+a[i++];sx=x;sy=y;cur=[];push(x,y);while(i<a.length){x=(rel?x:0)+a[i++];y=(rel?y:0)+a[i++];push(x,y);}ppx=x;ppy=y;break;
+      case 'Z':push(sx,sy);flush();x=sx;y=sy;ppx=x;ppy=y;break;
+      case 'L':while(i<a.length){x=(rel?x:0)+a[i++];y=(rel?y:0)+a[i++];push(x,y);}ppx=x;ppy=y;break;
+      case 'H':while(i<a.length){x=(rel?x:0)+a[i++];push(x,y);}ppx=x;ppy=y;break;
+      case 'V':while(i<a.length){y=(rel?y:0)+a[i++];push(x,y);}ppx=x;ppy=y;break;
+      case 'C':while(i+5<a.length+1){const x1=(rel?x:0)+a[i++],y1=(rel?y:0)+a[i++],x2=(rel?x:0)+a[i++],y2=(rel?y:0)+a[i++],ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];cubic(x,y,x1,y1,x2,y2,ex,ey,0);ppx=x2;ppy=y2;x=ex;y=ey;}break;
+      case 'S':while(i+3<a.length+1){const x1=2*x-ppx,y1=2*y-ppy,x2=(rel?x:0)+a[i++],y2=(rel?y:0)+a[i++],ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];cubic(x,y,x1,y1,x2,y2,ex,ey,0);ppx=x2;ppy=y2;x=ex;y=ey;}break;
+      case 'Q':while(i+3<a.length+1){const x1=(rel?x:0)+a[i++],y1=(rel?y:0)+a[i++],ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];quad(x,y,x1,y1,ex,ey,0);ppx=x1;ppy=y1;x=ex;y=ey;}break;
+      case 'T':while(i+1<a.length+1){const x1=2*x-ppx,y1=2*y-ppy,ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];quad(x,y,x1,y1,ex,ey,0);ppx=x1;ppy=y1;x=ex;y=ey;}break;
+      case 'A':while(i+6<a.length+1){const rx=a[i++],ry=a[i++],xR=a[i++],la=a[i++],sw=a[i++],ex=(rel?x:0)+a[i++],ey=(rel?y:0)+a[i++];arc(x,y,rx,ry,xR,la,sw,ex,ey);ppx=x;ppy=y;x=ex;y=ey;}break;
     }
   }
-  flushSub();
-  return subpaths;
+  flush();return subpaths;
 }
- 
-// ── POLYGON AREA (signed) ─────────────────────────────────────
-function signedArea(flat){
-  let a=0;
-  const n=flat.length/2;
-  for(let i=0;i<n;i++){const j=(i+1)%n;a+=flat[i*2]*flat[j*2+1]-flat[j*2]*flat[i*2+1];}
-  return a/2;
-}
- 
-// ── POINT IN POLYGON ─────────────────────────────────────────
-function pointInPoly(px,py,flat){
-  let inside=false;
-  const n=flat.length/2;
-  for(let i=0,j=n-1;i<n;j=i++){
-    const xi=flat[i*2],yi=flat[i*2+1],xj=flat[j*2],yj=flat[j*2+1];
-    if(((yi>py)!==(yj>py))&&(px<(xj-xi)*(py-yi)/(yj-yi)+xi))inside=!inside;
-  }
-  return inside;
-}
- 
-// ── APPLY ELEMENT TRANSFORM ───────────────────────────────────
-function getElementMatrix(el){
-  let m=[1,0,0,1,0,0]; // a,b,c,d,e,f
-  function compose(m1,m2){
-    return[m1[0]*m2[0]+m1[2]*m2[1],m1[1]*m2[0]+m1[3]*m2[1],m1[0]*m2[2]+m1[2]*m2[3],m1[1]*m2[2]+m1[3]*m2[3],m1[0]*m2[4]+m1[2]*m2[5]+m1[4],m1[1]*m2[4]+m1[3]*m2[5]+m1[5]];
-  }
-  const chain=[];
-  let node=el;
-  while(node&&node.tagName!=='svg'){chain.unshift(node);node=node.parentElement;}
+
+// ── TRANSFORM ────────────────────────────────────────────────
+function getMatrix(el){
+  let m=[1,0,0,1,0,0];
+  function compose(a,b){return[a[0]*b[0]+a[2]*b[1],a[1]*b[0]+a[3]*b[1],a[0]*b[2]+a[2]*b[3],a[1]*b[2]+a[3]*b[3],a[0]*b[4]+a[2]*b[5]+a[4],a[1]*b[4]+a[3]*b[5]+a[5]];}
+  const chain=[];let node=el;while(node&&node.tagName!=='svg'){chain.unshift(node);node=node.parentElement;}
   chain.forEach(n=>{
-    const t=n.getAttribute('transform');
-    if(!t)return;
-    const mxM=t.match(/matrix\(([^)]+)\)/);
-    const mxT=t.match(/translate\(([^)]+)\)/);
-    const mxS=t.match(/scale\(([^)]+)\)/);
-    const mxR=t.match(/rotate\(([^)]+)\)/);
-    if(mxM){const v=mxM[1].trim().split(/[\s,]+/).map(Number);m=compose(m,[v[0],v[1],v[2],v[3],v[4],v[5]]);}
+    const t=n.getAttribute('transform');if(!t)return;
+    const mM=t.match(/matrix\(([^)]+)\)/),mT=t.match(/translate\(([^)]+)\)/),mS=t.match(/scale\(([^)]+)\)/),mR=t.match(/rotate\(([^)]+)\)/);
+    if(mM){const v=mM[1].trim().split(/[\s,]+/).map(Number);m=compose(m,v);}
     else{
-      if(mxT){const v=mxT[1].trim().split(/[\s,]+/).map(Number);m=compose(m,[1,0,0,1,v[0]||0,v[1]||0]);}
-      if(mxS){const v=mxS[1].trim().split(/[\s,]+/).map(Number);m=compose(m,[v[0]||1,0,0,v[1]!=null?v[1]:v[0]||1,0,0]);}
-      if(mxR){const ang=parseFloat(mxR[1])*Math.PI/180;const c=Math.cos(ang),s=Math.sin(ang);m=compose(m,[c,s,-s,c,0,0]);}
+      if(mT){const v=mT[1].trim().split(/[\s,]+/).map(Number);m=compose(m,[1,0,0,1,v[0]||0,v[1]||0]);}
+      if(mS){const v=mS[1].trim().split(/[\s,]+/).map(Number);m=compose(m,[v[0]||1,0,0,v[1]!=null?v[1]:v[0]||1,0,0]);}
+      if(mR){const ag=parseFloat(mR[1])*Math.PI/180,c=Math.cos(ag),s=Math.sin(ag);m=compose(m,[c,s,-s,c,0,0]);}
     }
   });
   return m;
 }
-function applyMatrix(m,x,y){return[m[0]*x+m[2]*y+m[4],m[1]*x+m[3]*y+m[5]];}
- 
-// ── EXTRACT ALL SUBPATHS FROM SVG ─────────────────────────────
-function extractAllSubpaths(svgEl,scaleX,scaleY,vx,vy){
+function applyM(m,x,y){return[m[0]*x+m[2]*y+m[4],m[1]*x+m[3]*y+m[5]];}
+
+// ── EXTRACT SUBPATHS FROM SVG DOM ────────────────────────────
+function extractSubpaths(svgEl,sx,sy,vx,vy){
   const all=[];
-  function addFlat(flat,el){
-    if(flat.length<6)return;
-    const mat=getElementMatrix(el);
-    const tf=[];
-    for(let i=0;i<flat.length;i+=2){
-      const [tx,ty]=applyMatrix(mat,flat[i],flat[i+1]);
-      tf.push((tx-vx)*scaleX,(ty-vy)*scaleY);
-    }
+  function add(flat,el){
+    if(flat.length<4)return;
+    const mat=getMatrix(el),tf=[];
+    for(let i=0;i<flat.length;i+=2){const[tx,ty]=applyM(mat,flat[i],flat[i+1]);tf.push((tx-vx)*sx,(ty-vy)*sy);}
     all.push(tf);
   }
- 
-  svgEl.querySelectorAll('path').forEach(el=>{
-    const d=el.getAttribute('d');if(!d)return;
-    parsePath(d,0.4).forEach(sp=>addFlat(sp,el));
-  });
-  svgEl.querySelectorAll('polygon,polyline').forEach(el=>{
-    const pts=(el.getAttribute('points')||'').trim().split(/[\s,]+/).map(Number);
-    const flat=[];for(let i=0;i<pts.length-1;i+=2)flat.push(pts[i],pts[i+1]);
-    addFlat(flat,el);
-  });
-  svgEl.querySelectorAll('circle').forEach(el=>{
-    const cx=parseFloat(el.getAttribute('cx'))||0,cy=parseFloat(el.getAttribute('cy'))||0,r=parseFloat(el.getAttribute('r'))||0;
-    if(r<=0)return;
-    const flat=[];const N=64;for(let i=0;i<N;i++){const a=i/N*Math.PI*2;flat.push(cx+r*Math.cos(a),cy+r*Math.sin(a));}
-    addFlat(flat,el);
-  });
-  svgEl.querySelectorAll('ellipse').forEach(el=>{
-    const cx=parseFloat(el.getAttribute('cx'))||0,cy=parseFloat(el.getAttribute('cy'))||0;
-    const rx=parseFloat(el.getAttribute('rx'))||0,ry=parseFloat(el.getAttribute('ry'))||0;
-    if(rx<=0||ry<=0)return;
-    const flat=[];const N=64;for(let i=0;i<N;i++){const a=i/N*Math.PI*2;flat.push(cx+rx*Math.cos(a),cy+ry*Math.sin(a));}
-    addFlat(flat,el);
-  });
+  svgEl.querySelectorAll('path').forEach(el=>{const d=el.getAttribute('d');if(d)parsePath(d,0.3).forEach(sp=>add(sp,el));});
+  svgEl.querySelectorAll('polygon,polyline').forEach(el=>{const pts=(el.getAttribute('points')||'').trim().split(/[\s,]+/).map(Number);const f=[];for(let i=0;i<pts.length-1;i+=2)f.push(pts[i],pts[i+1]);add(f,el);});
+  svgEl.querySelectorAll('circle').forEach(el=>{const cx=+el.getAttribute('cx')||0,cy=+el.getAttribute('cy')||0,r=+el.getAttribute('r')||0;if(r<=0)return;const f=[];for(let i=0;i<64;i++){const a=i/64*Math.PI*2;f.push(cx+r*Math.cos(a),cy+r*Math.sin(a));}add(f,el);});
+  svgEl.querySelectorAll('ellipse').forEach(el=>{const cx=+el.getAttribute('cx')||0,cy=+el.getAttribute('cy')||0,rx=+el.getAttribute('rx')||0,ry=+el.getAttribute('ry')||0;if(!rx||!ry)return;const f=[];for(let i=0;i<64;i++){const a=i/64*Math.PI*2;f.push(cx+rx*Math.cos(a),cy+ry*Math.sin(a));}add(f,el);});
   svgEl.querySelectorAll('rect').forEach(el=>{
-    const x=parseFloat(el.getAttribute('x'))||0,y=parseFloat(el.getAttribute('y'))||0;
-    const w=parseFloat(el.getAttribute('width'))||0,h=parseFloat(el.getAttribute('height'))||0;
-    if(w<=0||h<=0)return;
-    let rx=parseFloat(el.getAttribute('rx'))||0,ry=parseFloat(el.getAttribute('ry'))||rx;
-    rx=Math.min(rx,w/2);ry=Math.min(ry,h/2);
-    const flat=[];
+    const x=+el.getAttribute('x')||0,y=+el.getAttribute('y')||0,w=+el.getAttribute('width')||0,h=+el.getAttribute('height')||0;
+    if(!w||!h)return;
+    let rx=+el.getAttribute('rx')||0,ry=+el.getAttribute('ry')||rx;rx=Math.min(rx,w/2);ry=Math.min(ry,h/2);
+    const f=[];
     if(rx>0||ry>0){
-      const N=8;
-      function arc(cx,cy,r1,r2,a0,a1){for(let i=0;i<=N;i++){const a=a0+(a1-a0)*i/N;flat.push(cx+r1*Math.cos(a),cy+r2*Math.sin(a));}}
-      arc(x+rx,y+ry,rx,ry,Math.PI,Math.PI*1.5);arc(x+w-rx,y+ry,rx,ry,-Math.PI/2,0);
-      arc(x+w-rx,y+h-ry,rx,ry,0,Math.PI/2);arc(x+rx,y+h-ry,rx,ry,Math.PI/2,Math.PI);
-    } else {flat.push(x,y,x+w,y,x+w,y+h,x,y+h);}
-    addFlat(flat,el);
+      const N=8;function arc(cx,cy,r1,r2,a0,a1){for(let i=0;i<=N;i++){const a=a0+(a1-a0)*i/N;f.push(cx+r1*Math.cos(a),cy+r2*Math.sin(a));}}
+      arc(x+rx,y+ry,rx,ry,Math.PI,Math.PI*1.5);arc(x+w-rx,y+ry,rx,ry,-Math.PI/2,0);arc(x+w-rx,y+h-ry,rx,ry,0,Math.PI/2);arc(x+rx,y+h-ry,rx,ry,Math.PI/2,Math.PI);
+    } else f.push(x,y,x+w,y,x+w,y+h,x,y+h);
+    add(f,el);
   });
+  svgEl.querySelectorAll('line').forEach(el=>{const x1=+el.getAttribute('x1')||0,y1=+el.getAttribute('y1')||0,x2=+el.getAttribute('x2')||0,y2=+el.getAttribute('y2')||0;add([x1,y1,x2,y2],el);});
   return all;
 }
- 
-// ── CLASSIFY SUBPATHS INTO OUTER/HOLE GROUPS ──────────────────
-// Uses even-odd / winding: a subpath is a hole if it's inside an odd number of other subpaths
-function classifySubpaths(subpaths){
-  const n=subpaths.length;
-  const areas=subpaths.map(sp=>signedArea(sp));
-  // containment count: how many other subpaths contain this one
-  const containedBy=new Array(n).fill(0);
-  for(let i=0;i<n;i++){
-    const pi=subpaths[i][0],qi=subpaths[i][1]; // first point
-    for(let j=0;j<n;j++){
-      if(i===j)continue;
-      if(pointInPoly(pi,qi,subpaths[j]))containedBy[i]++;
-    }
+
+// ── OFFSET POLYGON (inward/outward) ──────────────────────────
+// Creates a parallel offset ring for wall thickness
+function offsetPolyline(flat, offset){
+  const n = flat.length / 2;
+  if(n < 2) return flat;
+  const out = [];
+  for(let i = 0; i < n; i++){
+    const prev = (i - 1 + n) % n;
+    const next = (i + 1) % n;
+    const ax = flat[prev*2], ay = flat[prev*2+1];
+    const bx = flat[i*2],   by = flat[i*2+1];
+    const cx = flat[next*2], cy = flat[next*2+1];
+    // normal of incoming edge
+    let dx1 = bx-ax, dy1 = by-ay, l1 = Math.sqrt(dx1*dx1+dy1*dy1)||1;
+    dx1/=l1; dy1/=l1;
+    // normal of outgoing edge
+    let dx2 = cx-bx, dy2 = cy-by, l2 = Math.sqrt(dx2*dx2+dy2*dy2)||1;
+    dx2/=l2; dy2/=l2;
+    // average normal
+    let nx = -(dy1+dy2), ny = dx1+dx2;
+    const nl = Math.sqrt(nx*nx+ny*ny)||1;
+    nx/=nl; ny/=nl;
+    // miter limit
+    const dot = dx1*dx2+dy1*dy2;
+    const miter = Math.min(4, 1/Math.max(0.1, Math.sqrt((1-dot)/2)));
+    out.push(bx + nx*offset*miter, by + ny*offset*miter);
   }
-  // group: outer = contained by even number (0,2,4...) → forms outer shell
-  //        hole  = contained by odd number  (1,3,5...) → is a hole
-  // We'll build groups: each outer + its direct holes
-  const isHole=containedBy.map(c=>c%2===1);
-  // find direct parent for each hole = smallest outer that contains it
-  const groups=[];
-  const outerIdx=subpaths.map((_,i)=>!isHole[i]?i:-1).filter(i=>i>=0);
-  const holeIdx=subpaths.map((_,i)=>isHole[i]?i:-1).filter(i=>i>=0);
- 
-  // each outer gets its holes
-  const outerGroups=outerIdx.map(oi=>({outer:subpaths[oi],holes:[]}));
-  holeIdx.forEach(hi=>{
-    // find smallest containing outer
-    let bestOuter=-1,bestArea=Infinity;
-    const hp=subpaths[hi][0],hq=subpaths[hi][1];
-    outerIdx.forEach((oi,gi)=>{
-      if(pointInPoly(hp,hq,subpaths[oi])){
-        const a=Math.abs(areas[oi]);
-        if(a<bestArea){bestArea=a;bestOuter=gi;}
+  return out;
+}
+
+// ── BUILD WALL (tube) FROM POLYLINE ──────────────────────────
+// Each subpath becomes two rings (outer + inner), capped top/bottom
+function buildWallMesh(subpaths, depthMM, wallMM, colHex, sceneScale){
+  const D = depthMM * sceneScale;
+  const W = wallMM * sceneScale;
+  const colInt = parseInt(colHex.replace('#',''), 16);
+  const dark = new THREE.Color(colHex).multiplyScalar(0.5);
+
+  const pos = [], norm = [], idx = [];
+  let off = 0;
+
+  function addFace(v0,v1,v2, nx,ny,nz){
+    pos.push(...v0,...v1,...v2);
+    norm.push(nx,ny,nz, nx,ny,nz, nx,ny,nz);
+    idx.push(off,off+1,off+2);off+=3;
+  }
+  function addQuad(v0,v1,v2,v3, nx,ny,nz){
+    addFace(v0,v1,v2,nx,ny,nz);addFace(v0,v2,v3,nx,ny,nz);
+  }
+  function signedArea(flat){let a=0;const n=flat.length/2;for(let i=0;i<n;i++){const j=(i+1)%n;a+=flat[i*2]*flat[j*2+1]-flat[j*2]*flat[i*2+1];}return a/2;}
+  function ptInPoly(px,py,flat){let inside=false;const n=flat.length/2;for(let i=0,j=n-1;i<n;j=i++){const xi=flat[i*2],yi=flat[i*2+1],xj=flat[j*2],yj=flat[j*2+1];if(((yi>py)!==(yj>py))&&(px<(xj-xi)*(py-yi)/(yj-yi)+xi))inside=!inside;}return inside;}
+
+  subpaths.forEach(sp => {
+    const n = sp.length / 2;
+    if(n < 3) return;
+
+    // ensure CCW
+    const area = signedArea(sp);
+    const ring = area > 0 ? sp : [...sp]; // SVG Y-down: positive area = CW visually
+    // always work with the ring as-is, offset handles direction via sign
+
+    // For wall mode: create outer ring and inner ring offset by W
+    // Offset direction: inward (negative for CW rings, positive for CCW in 3D)
+    const offsetDir = area > 0 ? -W : W; // inward
+    const inner = offsetPolyline(ring, offsetDir);
+
+    // top face: annular quad strip between outer and inner rings
+    for(let i = 0; i < n; i++){
+      const j = (i+1)%n;
+      const ox0=ring[i*2], oz0=ring[i*2+1];
+      const ox1=ring[j*2], oz1=ring[j*2+1];
+      const ix0=inner[i*2], iz0=inner[i*2+1];
+      const ix1=inner[j*2], iz1=inner[j*2+1];
+      // top face (y = D)
+      addQuad([ox0,D,oz0],[ox1,D,oz1],[ix1,D,iz1],[ix0,D,iz0], 0,1,0);
+      // bottom face (y = 0)
+      addQuad([ox0,0,oz0],[ix0,0,iz0],[ix1,0,iz1],[ox1,0,oz1], 0,-1,0);
+      // outer wall
+      const enx=oz1-oz0, enz=-(ox1-ox0), enl=Math.sqrt(enx*enx+enz*enz)||1;
+      addQuad([ox0,D,oz0],[ox0,0,oz0],[ox1,0,oz1],[ox1,D,oz1], enx/enl,0,enz/enl);
+      // inner wall
+      const inx=iz0-iz1, inz=-(ix0-ix1), inl=Math.sqrt(inx*inx+inz*inz)||1;
+      addQuad([ix0,D,iz0],[ix1,D,iz1],[ix1,0,iz1],[ix0,0,iz0], inx/inl,0,inz/inl);
+    }
+  });
+
+  if(pos.length === 0) return null;
+
+  const geo = new THREE.BufferGeometry();
+  geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  geo.setAttribute('normal',   new THREE.Float32BufferAttribute(norm, 3));
+  geo.setIndex(idx);
+  geo.computeVertexNormals();
+
+  const mat = new THREE.MeshLambertMaterial({color: colInt, side: THREE.DoubleSide});
+  const mesh = new THREE.Mesh(geo, mat);
+  mesh.castShadow = true; mesh.receiveShadow = true;
+
+  const group = new THREE.Group();
+  group.add(mesh);
+
+  const edgesGeo = new THREE.EdgesGeometry(geo, 20);
+  const edgeMat = new THREE.LineBasicMaterial({color:0x4a7cdc,transparent:true,opacity:0});
+  const edgeMesh = new THREE.LineSegments(edgesGeo, edgeMat);
+  mesh.add(edgeMesh);
+
+  // center
+  const bbox = new THREE.Box3().setFromObject(group);
+  const center = new THREE.Vector3(); bbox.getCenter(center);
+  group.position.set(-center.x, 0, -center.z);
+
+  return {group, mesh, edgeMesh, geo, mat};
+}
+
+// ── BUILD SOLID MESH (with holes) ─────────────────────────────
+function signedArea(flat){let a=0;const n=flat.length/2;for(let i=0;i<n;i++){const j=(i+1)%n;a+=flat[i*2]*flat[j*2+1]-flat[j*2]*flat[i*2+1];}return a/2;}
+function ptInPoly(px,py,flat){let inside=false;const n=flat.length/2;for(let i=0,j=n-1;i<n;j=i++){const xi=flat[i*2],yi=flat[i*2+1],xj=flat[j*2],yj=flat[j*2+1];if(((yi>py)!==(yj>py))&&(px<(xj-xi)*(py-yi)/(yj-yi)+xi))inside=!inside;}return inside;}
+
+function buildSolidMesh(subpaths, depthMM, colHex, sceneScale){
+  const D = depthMM * sceneScale;
+  const colInt = parseInt(colHex.replace('#',''), 16);
+  const dark = new THREE.Color(colHex).multiplyScalar(0.45);
+
+  // classify outer vs holes
+  const areas = subpaths.map(sp => signedArea(sp));
+  const containedBy = subpaths.map((sp,i) => {
+    let count = 0;
+    subpaths.forEach((other,j) => { if(i!==j && ptInPoly(sp[0],sp[1],other)) count++; });
+    return count;
+  });
+  const isHole = containedBy.map(c => c%2===1);
+  const outerIdxs = subpaths.map((_,i)=>i).filter(i=>!isHole[i]);
+  const holeIdxs  = subpaths.map((_,i)=>i).filter(i=>isHole[i]);
+
+  const outerGroups = outerIdxs.map(oi => ({outer: subpaths[oi], holes: []}));
+  holeIdxs.forEach(hi => {
+    let bestG = -1, bestA = Infinity;
+    outerIdxs.forEach((oi,gi) => {
+      if(ptInPoly(subpaths[hi][0], subpaths[hi][1], subpaths[oi])){
+        const a = Math.abs(areas[oi]);
+        if(a < bestA){bestA=a;bestG=gi;}
       }
     });
-    if(bestOuter>=0)outerGroups[bestOuter].holes.push(subpaths[hi]);
+    if(bestG>=0) outerGroups[bestG].holes.push(subpaths[hi]);
     else outerGroups.push({outer:subpaths[hi],holes:[]});
   });
- 
-  return outerGroups;
-}
- 
-// ── BUILD EXTRUDED 3D MESH ────────────────────────────────────
-function buildMesh(subpaths, depthMM, colHex){
-  const D=depthMM*0.1;
-  const colInt=parseInt(colHex.replace('#',''),16);
-  const darkCol=new THREE.Color(colHex).multiplyScalar(0.45);
- 
-  const groups=classifySubpaths(subpaths);
-  if(!groups.length)return null;
- 
+
   const topPos=[],topNorm=[],topIdx=[];
   const sidePos=[],sideNorm=[],sideIdx=[];
   let tOff=0,sOff=0;
- 
-  groups.forEach(({outer,holes})=>{
+
+  outerGroups.forEach(({outer,holes})=>{
     if(outer.length<6)return;
- 
-    // ensure outer is CCW (positive area in screen coords = CW visually, flip for 3D)
     const outerArea=signedArea(outer);
- 
-    // build earcut input: flat vertices + hole indices
     const earcutVerts=[...outer];
     const holeStarts=[];
-    holes.forEach(h=>{
-      if(h.length<6)return;
-      holeStarts.push(earcutVerts.length/2);
-      earcutVerts.push(...h);
-    });
- 
+    holes.forEach(h=>{if(h.length<6)return;holeStarts.push(earcutVerts.length/2);earcutVerts.push(...h);});
     const tris=earcut(earcutVerts,holeStarts.length?holeStarts:null,2);
-    if(!tris||tris.length===0)return;
- 
-    // TOP face
+    if(!tris||!tris.length)return;
     for(let i=0;i<tris.length;i+=3){
       const ai=tris[i]*2,bi=tris[i+1]*2,ci=tris[i+2]*2;
-      const ax=earcutVerts[ai],ay=earcutVerts[ai+1];
-      const bx=earcutVerts[bi],by=earcutVerts[bi+1];
-      const cx=earcutVerts[ci],cy=earcutVerts[ci+1];
-      // winding: outerArea>0 means CW in SVG (Y down), for 3D top face we want CCW looking from +Y
+      const ax=earcutVerts[ai],ay=earcutVerts[ai+1],bx=earcutVerts[bi],by=earcutVerts[bi+1],cx=earcutVerts[ci],cy=earcutVerts[ci+1];
       if(outerArea>0){
-        topPos.push(ax,D,ay, cx,D,cy, bx,D,by);
+        topPos.push(ax,D,ay,cx,D,cy,bx,D,by);topPos.push(ax,0,ay,bx,0,by,cx,0,cy);
       } else {
-        topPos.push(ax,D,ay, bx,D,by, cx,D,cy);
+        topPos.push(ax,D,ay,bx,D,by,cx,D,cy);topPos.push(ax,0,ay,cx,0,cy,bx,0,by);
       }
-      topNorm.push(0,1,0, 0,1,0, 0,1,0);
-      topIdx.push(tOff,tOff+1,tOff+2);tOff+=3;
+      topNorm.push(0,1,0,0,1,0,0,1,0, 0,-1,0,0,-1,0,0,-1,0);
+      topIdx.push(tOff,tOff+1,tOff+2,tOff+3,tOff+4,tOff+5);tOff+=6;
     }
-    // BOTTOM face (flip winding)
-    for(let i=0;i<tris.length;i+=3){
-      const ai=tris[i]*2,bi=tris[i+1]*2,ci=tris[i+2]*2;
-      const ax=earcutVerts[ai],ay=earcutVerts[ai+1];
-      const bx=earcutVerts[bi],by=earcutVerts[bi+1];
-      const cx=earcutVerts[ci],cy=earcutVerts[ci+1];
-      if(outerArea>0){
-        topPos.push(ax,0,ay, bx,0,by, cx,0,cy);
-      } else {
-        topPos.push(ax,0,ay, cx,0,cy, bx,0,by);
-      }
-      topNorm.push(0,-1,0, 0,-1,0, 0,-1,0);
-      topIdx.push(tOff,tOff+1,tOff+2);tOff+=3;
-    }
- 
-    // SIDE walls for outer contour
-    function addWalls(ring){
+    function walls(ring){
       const n=ring.length/2;
       for(let i=0;i<n;i++){
         const j=(i+1)%n;
-        const x0=ring[i*2],y0=ring[i*2+1];
-        const x1=ring[j*2],y1=ring[j*2+1];
+        const x0=ring[i*2],y0=ring[i*2+1],x1=ring[j*2],y1=ring[j*2+1];
         const nx=y1-y0,nz=-(x1-x0),nl=Math.sqrt(nx*nx+nz*nz)||1;
-        const nnx=nx/nl,nnz=nz/nl;
-        sidePos.push(x0,D,y0, x1,D,y1, x1,0,y1, x0,0,y0);
-        sideNorm.push(nnx,0,nnz, nnx,0,nnz, nnx,0,nnz, nnx,0,nnz);
-        sideIdx.push(sOff,sOff+1,sOff+2, sOff,sOff+2,sOff+3);sOff+=4;
+        sidePos.push(x0,D,y0,x1,D,y1,x1,0,y1,x0,0,y0);
+        sideNorm.push(nx/nl,0,nz/nl,nx/nl,0,nz/nl,nx/nl,0,nz/nl,nx/nl,0,nz/nl);
+        sideIdx.push(sOff,sOff+1,sOff+2,sOff,sOff+2,sOff+3);sOff+=4;
       }
     }
-    addWalls(outer);
-    holes.forEach(h=>addWalls(h));
+    walls(outer);holes.forEach(h=>walls(h));
   });
- 
-  if(topPos.length===0&&sidePos.length===0)return null;
- 
-  function makeGeo(pos,norm,idx){
-    const g=new THREE.BufferGeometry();
-    g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
-    g.setAttribute('normal',new THREE.Float32BufferAttribute(norm,3));
-    g.setIndex(idx);
-    g.computeVertexNormals();
-    return g;
-  }
- 
-  const geoTop=makeGeo(topPos,topNorm,topIdx);
-  const geoSide=makeGeo(sidePos,sideNorm,sideIdx);
- 
+
+  if(!topPos.length&&!sidePos.length)return null;
+
+  function mkGeo(p,n,i){const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(p,3));g.setAttribute('normal',new THREE.Float32BufferAttribute(n,3));g.setIndex(i);g.computeVertexNormals();return g;}
+  const gTop=mkGeo(topPos,topNorm,topIdx);
+  const gSide=mkGeo(sidePos,sideNorm,sideIdx);
   const matTop=new THREE.MeshLambertMaterial({color:colInt,side:THREE.DoubleSide});
-  const matSide=new THREE.MeshLambertMaterial({color:darkCol,side:THREE.DoubleSide});
- 
+  const matSide=new THREE.MeshLambertMaterial({color:dark,side:THREE.DoubleSide});
   const group=new THREE.Group();
- 
-  if(topIdx.length){const mTop=new THREE.Mesh(geoTop,matTop);mTop.castShadow=true;mTop.receiveShadow=true;group.add(mTop);}
-  if(sideIdx.length){const mSide=new THREE.Mesh(geoSide,matSide);mSide.castShadow=true;mSide.receiveShadow=true;group.add(mSide);}
- 
-  // edges
-  const allPos=[...topPos,...sidePos];
-  const allIdx=[...topIdx,...sideIdx.map(i=>i+(topPos.length/3))];
-  const geoAll=makeGeo(allPos,[...topNorm,...sideNorm],allIdx);
-  const edgesGeo=new THREE.EdgesGeometry(geoAll,15);
+  if(topIdx.length){const m=new THREE.Mesh(gTop,matTop);m.castShadow=true;m.receiveShadow=true;group.add(m);}
+  if(sideIdx.length){const m=new THREE.Mesh(gSide,matSide);m.castShadow=true;m.receiveShadow=true;group.add(m);}
+  const allP=[...topPos,...sidePos],allN=[...topNorm,...sideNorm],allI=[...topIdx,...sideIdx.map(i=>i+topPos.length/3)];
+  const gAll=mkGeo(allP,allN,allI);
+  const edgesGeo=new THREE.EdgesGeometry(gAll,15);
   const edgeMat=new THREE.LineBasicMaterial({color:0x4a7cdc,transparent:true,opacity:0});
   const edgeMesh=new THREE.LineSegments(edgesGeo,edgeMat);
   group.add(edgeMesh);
- 
-  // center group
-  const bbox=new THREE.Box3().setFromObject(group);
-  const center=new THREE.Vector3();bbox.getCenter(center);
+  const bbox=new THREE.Box3().setFromObject(group);const center=new THREE.Vector3();bbox.getCenter(center);
   group.position.set(-center.x,0,-center.z);
- 
-  return{group,edgeMesh,geoTop,geoSide,matTop,matSide,colInt};
+  return{group,edgeMesh,geoTop:gTop,geoSide:gSide,matTop,matSide};
 }
- 
+
 // ── ADD SHAPE ─────────────────────────────────────────────────
+const SCENE_SCALE = 0.1; // 1mm = 0.1 scene units
 async function addShape(cfg){
-  const MM=0.1,sc=cfg.scale/100;
-  const W=cfg.origW*sc*MM,H=cfg.origH*sc*MM;
+  const sc=cfg.scale/100;
+  const svgW=cfg.origW*sc, svgH=cfg.origH*sc;
+  const sX=svgW/cfg.origW, sY=svgH/cfg.origH;
+
   const parser=new DOMParser();
   const doc=parser.parseFromString(cfg.svgText,'image/svg+xml');
   const svgEl=doc.querySelector('svg');
-  const subpaths=extractAllSubpaths(svgEl,W/cfg.origW,H/cfg.origH,cfg.vx,cfg.vy);
- 
+  // extract in SVG coords, scaled by sX/sY to match mm size
+  const subpaths=extractSubpaths(svgEl, SCENE_SCALE*sX, SCENE_SCALE*sY, cfg.vx, cfg.vy);
+
   if(!subpaths||subpaths.length===0){
     alert(`No se encontraron formas en "${cfg.name}".`);return;
   }
-  const result=buildMesh(subpaths,cfg.heightMM,cfg.col);
-  if(!result){alert('No se pudo triangular la forma.');return;}
- 
-  const {group,edgeMesh,geoTop,geoSide,matTop,matSide}=result;
-  const idx=shapes.length,cols=3,spacing=32;
-  group.position.x=(idx%cols-1)*spacing;
-  group.position.z=Math.floor(idx/cols)*spacing-spacing;
+
+  let result;
+  if(cfg.mode==='wall'){
+    result = buildWallMesh(subpaths, cfg.heightMM, cfg.wallMM, cfg.col, SCENE_SCALE);
+  } else {
+    result = buildSolidMesh(subpaths, cfg.heightMM, cfg.col, SCENE_SCALE);
+  }
+  if(!result){alert('No se pudo construir la geometría.');return;}
+
+  const {group, edgeMesh} = result;
+  const i=shapes.length, cols=3, spacing=35;
+  group.position.x=(i%cols-1)*spacing;
+  group.position.z=Math.floor(i/cols)*spacing-spacing;
   scene.add(group);
- 
-  makeSVGTex(cfg,(tex)=>{
-    if(tex){matTop.map=tex;matTop.color.set(0xffffff);matTop.needsUpdate=true;render();}
-  });
- 
-  const shape={...cfg,group,edgeMesh,geoTop,geoSide,matTop,matSide,subpaths};
+
+  const shape={...cfg, group, edgeMesh, result, subpaths};
   shapes.push(shape);
   selectShape(shapes.length-1);
   renderShapeList();
   document.getElementById('es').style.display='none';
   updateCamera();
 }
- 
-function makeSVGTex(cfg,cb){
-  const SIZE=512;
-  const blob=new Blob([`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${cfg.vx} ${cfg.vy} ${cfg.origW} ${cfg.origH}" width="${SIZE}" height="${SIZE}">${cfg.inner}</svg>`],{type:'image/svg+xml'});
-  const url=URL.createObjectURL(blob);
-  const img=new Image();
-  img.onload=()=>{
-    const tc=document.createElement('canvas');tc.width=tc.height=SIZE;
-    tc.getContext('2d').drawImage(img,0,0,SIZE,SIZE);
-    URL.revokeObjectURL(url);
-    const tex=new THREE.CanvasTexture(tc);tex.flipY=false;cb(tex);
-  };
-  img.onerror=()=>{URL.revokeObjectURL(url);cb(null);};
-  img.src=url;
-}
- 
+
 async function rebuildShape(s){
   showL('Reconstruyendo...');
   await new Promise(r=>setTimeout(r,20));
   const oldPos=s.group.position.clone();
   scene.remove(s.group);
- 
-  const MM=0.1,sc=s.scale/100;
-  const W=s.origW*sc*MM,H=s.origH*sc*MM;
+
+  const sc=s.scale/100;
+  const sX=s.origW*sc/s.origW, sY=s.origH*sc/s.origH;
   const parser=new DOMParser();
   const doc=parser.parseFromString(s.svgText,'image/svg+xml');
   const svgEl=doc.querySelector('svg');
-  const subpaths=extractAllSubpaths(svgEl,W/s.origW,H/s.origH,s.vx,s.vy);
-  const result=buildMesh(subpaths,s.heightMM,s.col);
+  const subpaths=extractSubpaths(svgEl,SCENE_SCALE*sX,SCENE_SCALE*sY,s.vx,s.vy);
+
+  let result;
+  if(s.mode==='wall') result=buildWallMesh(subpaths,s.heightMM,s.wallMM,s.col,SCENE_SCALE);
+  else result=buildSolidMesh(subpaths,s.heightMM,s.col,SCENE_SCALE);
   if(!result){hideL();return;}
-  const {group,edgeMesh,geoTop,geoSide,matTop,matSide}=result;
+
+  const {group,edgeMesh}=result;
   group.position.set(oldPos.x,0,oldPos.z);
   if(shapes.indexOf(s)===sel)edgeMesh.material.opacity=1;
   scene.add(group);
-  s.group=group;s.edgeMesh=edgeMesh;s.geoTop=geoTop;s.geoSide=geoSide;s.matTop=matTop;s.matSide=matSide;s.subpaths=subpaths;
- 
-  makeSVGTex(s,(tex)=>{
-    if(tex){matTop.map=tex;matTop.color.set(0xffffff);matTop.needsUpdate=true;render();}
-  });
+  s.group=group;s.edgeMesh=edgeMesh;s.result=result;s.subpaths=subpaths;
   hideL();updateSelInfo();render();
 }
- 
+
 function applyColor(s,col){
   s.col=col;
-  const dark=new THREE.Color(col).multiplyScalar(0.45);
-  s.matTop.map=null;s.matTop.color.set(col);s.matTop.needsUpdate=true;
-  s.matSide.color.copy(dark);s.matSide.needsUpdate=true;
-  makeSVGTex(s,(tex)=>{if(tex){s.matTop.map=tex;s.matTop.color.set(0xffffff);s.matTop.needsUpdate=true;render();}});
+  const r=s.result;
+  if(!r)return;
+  if(r.mat){r.mat.color.set(col);}
+  if(r.matTop){r.matTop.map=null;r.matTop.color.set(col);r.matTop.needsUpdate=true;}
+  if(r.matSide){r.matSide.color.copy(new THREE.Color(col).multiplyScalar(0.5));}
   render();
 }
- 
+
 // ── UI ────────────────────────────────────────────────────────
+function setMode(m){
+  if(sel===null)return;
+  shapes[sel].mode=m;
+  document.getElementById('m-wall').classList.toggle('active',m==='wall');
+  document.getElementById('m-solid').classList.toggle('active',m==='solid');
+  document.getElementById('wall-ctrl').style.display=m==='wall'?'':'none';
+  rebuildShape(shapes[sel]);
+}
+function setWall(v){
+  if(sel===null)return;
+  shapes[sel].wallMM=Math.max(0.2,Math.min(20,+v||1.2));
+  rebuildShape(shapes[sel]);
+}
 function renderShapeList(){
   const el=document.getElementById('sl'),ns=document.getElementById('nso');
   if(!shapes.length){el.innerHTML='';if(ns)ns.style.display='';document.getElementById('es').style.display='';return;}
@@ -825,20 +811,24 @@ function selectShape(i){
   document.getElementById('cb').style.display='';
   document.getElementById('nsc').style.display='none';
   document.getElementById('hn').value=s.heightMM;
-  document.getElementById('hs2').value=Math.min(s.heightMM,200);
+  document.getElementById('hsl').value=Math.min(s.heightMM,200);
   document.getElementById('hv').textContent=s.heightMM+' mm';
-  document.getElementById('ss').value=s.scale;
+  document.getElementById('ssl').value=s.scale;
   document.getElementById('sv').textContent=Math.round(s.scale)+'%';
+  document.getElementById('wt').value=s.wallMM;
+  document.getElementById('m-wall').classList.toggle('active',s.mode==='wall');
+  document.getElementById('m-solid').classList.toggle('active',s.mode==='solid');
+  document.getElementById('wall-ctrl').style.display=s.mode==='wall'?'':'none';
   const ci=COLS.findIndex(c=>c.h===s.col);
   document.querySelectorAll('.csw').forEach((sw,j)=>sw.classList.toggle('active',j===ci));
-  const hs=document.getElementById('hs');hs.textContent=s.name;hs.classList.add('show');
+  const hs=document.getElementById('hsel');hs.textContent=s.name;hs.classList.add('show');
   updateSelInfo();render();
 }
 function updateSelInfo(){
   if(sel===null){document.getElementById('si').classList.remove('show');return;}
   const s=shapes[sel],sc=s.scale/100;
   document.getElementById('sin').textContent=s.name;
-  document.getElementById('sid').textContent=`${(s.origW*sc).toFixed(1)}×${(s.origH*sc).toFixed(1)} px · ${s.heightMM}mm · ${Math.round(s.scale)}%`;
+  document.getElementById('sid').textContent=`${s.mode==='wall'?'Paredes '+s.wallMM+'mm':'Sólido'} · ${s.heightMM}mm altura · ${Math.round(s.scale)}%`;
   document.getElementById('si').classList.add('show');
 }
 function setH(v){
@@ -846,74 +836,61 @@ function setH(v){
   const val=Math.max(1,Math.min(999,Math.round(+v)||1));
   shapes[sel].heightMM=val;
   document.getElementById('hn').value=val;
-  document.getElementById('hs2').value=Math.min(val,200);
+  document.getElementById('hsl').value=Math.min(val,200);
   document.getElementById('hv').textContent=val+' mm';
   rebuildShape(shapes[sel]);
 }
 function adjH(d){if(sel!==null)setH(shapes[sel].heightMM+d);}
-function setSc(v){
-  if(sel===null)return;shapes[sel].scale=+v;
-  document.getElementById('sv').textContent=Math.round(v)+'%';
-  rebuildShape(shapes[sel]);
-}
+function setSc(v){if(sel===null)return;shapes[sel].scale=+v;document.getElementById('sv').textContent=Math.round(v)+'%';rebuildShape(shapes[sel]);}
 function centerSel(){if(sel===null)return;shapes[sel].group.position.x=0;shapes[sel].group.position.z=0;render();}
 function delSel(){if(sel!==null)deleteShape(sel);}
 function deleteShape(i){
   scene.remove(shapes[i].group);shapes.splice(i,1);
   if(sel>=shapes.length)sel=shapes.length-1;if(sel<0)sel=null;
   if(sel!==null)selectShape(sel);
-  else{document.getElementById('cb').style.display='none';document.getElementById('nsc').style.display='';document.getElementById('hs').classList.remove('show');document.getElementById('si').classList.remove('show');}
+  else{document.getElementById('cb').style.display='none';document.getElementById('nsc').style.display='';document.getElementById('hsel').classList.remove('show');document.getElementById('si').classList.remove('show');}
   renderShapeList();render();
 }
 const VN={persp:'3D libre',top:'Vista superior',front:'Vista frontal',right:'Vista lateral',iso:'Isométrica'};
 function setView(v,btn){
   document.querySelectorAll('.vb').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');
-  document.getElementById('hv2').textContent=VN[v]||v;
+  document.getElementById('hview').textContent=VN[v]||v;
   if(v==='persp'){theta=-45;phi=55;radius=120;}if(v==='top'){theta=0;phi=1;radius=150;}
   if(v==='front'){theta=0;phi=89;radius=120;}if(v==='right'){theta=90;phi=89;radius=120;}
   if(v==='iso'){theta=-45;phi=35;radius=130;}
   updateCamera();
 }
- 
+
 // ── EXPORT ────────────────────────────────────────────────────
-function collectGeo(){
+function gatherTris(){
   const out=[];
   shapes.forEach(s=>{
     const wp=s.group.position;
-    [s.geoTop,s.geoSide].forEach(geo=>{
-      if(!geo)return;
-      const pos=geo.attributes.position,idx=geo.index;
-      if(!idx)return;
-      for(let i=0;i<idx.count;i+=3){
-        const ai=idx.getX(i),bi=idx.getX(i+1),ci=idx.getX(i+2);
-        // group position offset + child mesh position (center offset baked into group)
-        // child meshes are at 0,0,0 relative to group; group.position is offset
-        // but center was baked into group.position during build... need to traverse
-        const ax=pos.getX(ai)+wp.x,ay=pos.getY(ai),az=pos.getZ(ai)+wp.z;
-        const bx=pos.getX(bi)+wp.x,by=pos.getY(bi),bz=pos.getZ(bi)+wp.z;
-        const cx=pos.getX(ci)+wp.x,cy=pos.getY(ci),cz=pos.getZ(ci)+wp.z;
-        out.push({ax,ay,az,bx,by,bz,cx,cy,cz});
+    const geos=[];
+    s.group.traverse(child=>{if(child.isMesh&&child.geometry)geos.push({geo:child.geometry,pos:child.getWorldPosition(new THREE.Vector3())});});
+    geos.forEach(({geo,pos})=>{
+      const pa=geo.attributes.position,ix=geo.index;if(!ix)return;
+      for(let i=0;i<ix.count;i+=3){
+        const ai=ix.getX(i),bi=ix.getX(i+1),ci=ix.getX(i+2);
+        out.push([pa.getX(ai)+pos.x,pa.getY(ai),pa.getZ(ai)+pos.z,pa.getX(bi)+pos.x,pa.getY(bi),pa.getZ(bi)+pos.z,pa.getX(ci)+pos.x,pa.getY(ci),pa.getZ(ci)+pos.z]);
       }
     });
   });
   return out;
 }
- 
 function exportSTL(){
   if(!shapes.length){alert('No hay objetos.');return;}
-  const tris=collectGeo();
-  const buf=new ArrayBuffer(80+4+tris.length*50);
-  const dv=new DataView(buf);
+  const tris=gatherTris();
+  const buf=new ArrayBuffer(80+4+tris.length*50);const dv=new DataView(buf);
   dv.setUint32(80,tris.length,true);
-  tris.forEach(({ax,ay,az,bx,by,bz,cx,cy,cz},i)=>{
-    const off=84+i*50;
+  tris.forEach(([ax,ay,az,bx,by,bz,cx,cy,cz],i)=>{
+    const o=84+i*50;
     const ux=bx-ax,uy=by-ay,uz=bz-az,vx=cx-ax,vy=cy-ay,vz=cz-az;
-    const nx=uy*vz-uz*vy,ny=uz*vx-ux*vz,nz=ux*vy-uy*vx;
-    const nl=Math.sqrt(nx*nx+ny*ny+nz*nz)||1;
-    dv.setFloat32(off,nx/nl,true);dv.setFloat32(off+4,ny/nl,true);dv.setFloat32(off+8,nz/nl,true);
-    dv.setFloat32(off+12,ax,true);dv.setFloat32(off+16,ay,true);dv.setFloat32(off+20,az,true);
-    dv.setFloat32(off+24,bx,true);dv.setFloat32(off+28,by,true);dv.setFloat32(off+32,bz,true);
-    dv.setFloat32(off+36,cx,true);dv.setFloat32(off+40,cy,true);dv.setFloat32(off+44,cz,true);
+    const nx=uy*vz-uz*vy,ny=uz*vx-ux*vz,nz=ux*vy-uy*vx,nl=Math.sqrt(nx*nx+ny*ny+nz*nz)||1;
+    dv.setFloat32(o,nx/nl,true);dv.setFloat32(o+4,ny/nl,true);dv.setFloat32(o+8,nz/nl,true);
+    dv.setFloat32(o+12,ax,true);dv.setFloat32(o+16,ay,true);dv.setFloat32(o+20,az,true);
+    dv.setFloat32(o+24,bx,true);dv.setFloat32(o+28,by,true);dv.setFloat32(o+32,bz,true);
+    dv.setFloat32(o+36,cx,true);dv.setFloat32(o+40,cy,true);dv.setFloat32(o+44,cz,true);
   });
   dlBlob(new Blob([buf],{type:'application/octet-stream'}),'modelo3d.stl');
 }
@@ -921,12 +898,15 @@ function exportOBJ(){
   if(!shapes.length){alert('No hay objetos.');return;}
   let obj='# SVG 3D\n',vi=1;
   shapes.forEach(s=>{
-    const wp=s.group.position;obj+=`\no ${s.name}\n`;
-    [s.geoTop,s.geoSide].filter(Boolean).forEach(geo=>{
-      const pos=geo.attributes.position,idx=geo.index;if(!idx)return;
-      for(let i=0;i<pos.count;i++)obj+=`v ${(pos.getX(i)+wp.x).toFixed(4)} ${pos.getY(i).toFixed(4)} ${(pos.getZ(i)+wp.z).toFixed(4)}\n`;
-      for(let i=0;i<idx.count;i+=3)obj+=`f ${idx.getX(i)+vi} ${idx.getX(i+1)+vi} ${idx.getX(i+2)+vi}\n`;
-      vi+=pos.count;
+    obj+=`\no ${s.name}\n`;
+    s.group.traverse(child=>{
+      if(!child.isMesh||!child.geometry)return;
+      const pa=child.geometry.attributes.position,ix=child.geometry.index;
+      const wp=child.getWorldPosition(new THREE.Vector3());
+      if(!ix)return;
+      for(let i=0;i<pa.count;i++)obj+=`v ${(pa.getX(i)+wp.x).toFixed(4)} ${pa.getY(i).toFixed(4)} ${(pa.getZ(i)+wp.z).toFixed(4)}\n`;
+      for(let i=0;i<ix.count;i+=3)obj+=`f ${ix.getX(i)+vi} ${ix.getX(i+1)+vi} ${ix.getX(i+2)+vi}\n`;
+      vi+=pa.count;
     });
   });
   dlBlob(new Blob([obj],{type:'text/plain'}),'modelo3d.obj');
@@ -937,4 +917,3 @@ updateCamera();
 </script>
 </body>
 </html>
- 
